@@ -87,8 +87,8 @@ if st.button("Predict answer", type="primary"):
         top_choice, top_prob = ranked[0]
         st.success(f"**Top answer: {top_choice}** — {options[top_choice]}")
 
-        st.write("Ranked probabilities:")
-        for choice, prob in ranked:
+        st.write("Top 3 answers:")
+        for choice, prob in ranked[:3]:
             st.write(f"**{choice}**: {options[choice]}")
             st.progress(min(prob, 1.0))
             st.caption(f"Confidence: {prob:.2%}")
